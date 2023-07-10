@@ -1,0 +1,19 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.FirstNotesApplication" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="android:statusBarColor">@color/red_color</item>
+    </style>
+
+    <style name="ProgressBar">
+        <item name="colorSecondary">#FF5151</item>
+    </style>
+
+    <style name="ShapeAppearanceOverlay.MyApp.FloatingActionButton" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item> <!-- Adjust the corner radius as needed -->
+    </style>
+
+    <style name="Theme.FirstNotesApplication" parent="Base.Theme.FirstNotesApplication" />
+</resources>
