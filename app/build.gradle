@@ -4,6 +4,8 @@ plugins {
     id 'kotlin-kapt'
     id 'kotlin-parcelize'
     id 'org.jetbrains.kotlin.android'
+    id 'com.google.gms.google-services'
+    id 'com.google.firebase.crashlytics'
 }
 
 apply plugin: "androidx.navigation.safeargs.kotlin"
@@ -11,7 +13,6 @@ apply plugin: "androidx.navigation.safeargs.kotlin"
 android {
     namespace 'com.example.firstnotesapplication'
     compileSdk 34
-
     defaultConfig {
         applicationId "com.example.firstnotesapplication"
         minSdk 21
@@ -21,18 +22,15 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
-
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
-
     buildFeatures{
         viewBinding true
     }
-
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_17
         targetCompatibility JavaVersion.VERSION_17
@@ -43,7 +41,6 @@ android {
 }
 
 dependencies {
-
     implementation 'androidx.core:core-ktx:1.10.1'
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'com.google.android.material:material:1.9.0'
@@ -51,6 +48,10 @@ dependencies {
     implementation 'androidx.core:core-ktx:+'
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0'
     implementation 'org.jetbrains.kotlin:kotlin-stdlib:1.0.0'
+    implementation 'com.google.firebase:firebase-analytics-ktx:21.2.0'
+    implementation 'com.google.firebase:firebase-crashlytics-ktx:18.3.2'
+    implementation 'com.google.android.gms:play-services-ads:21.3.0'
+    implementation 'com.google.firebase:firebase-firestore-ktx:24.6.1'
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
@@ -79,4 +80,6 @@ dependencies {
     //coroutines
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4'
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4'
+
+
 }

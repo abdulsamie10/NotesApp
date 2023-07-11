@@ -1,6 +1,7 @@
 package com.example.firstnotesapplication.ui.Fragments
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.Menu
@@ -8,14 +9,20 @@ import android.view.MenuInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.SearchView
+import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
+import com.example.firstnotesapplication.AdsModel
 import com.example.firstnotesapplication.Model.Notes
 import com.example.firstnotesapplication.R
 import com.example.firstnotesapplication.ViewModel.NotesViewModel
 import com.example.firstnotesapplication.databinding.FragmentHomeBinding
 import com.example.firstnotesapplication.ui.Adapter.NotesAdapter
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.AdView
+import com.google.android.gms.ads.MobileAds
+import com.google.firebase.firestore.FirebaseFirestore
 
 class HomeFragment : Fragment() {
 
@@ -23,6 +30,8 @@ class HomeFragment : Fragment() {
     val noteViewModel : NotesViewModel by viewModels()
     var oldMyNotes = arrayListOf<Notes>()
     lateinit var adapter: NotesAdapter
+    private lateinit var adView : AdView
+    lateinit var firestore : FirebaseFirestore
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -32,6 +41,25 @@ class HomeFragment : Fragment() {
         binding = FragmentHomeBinding.inflate(inflater, container, false)
         setHasOptionsMenu(true)
 
+        firestore = FirebaseFirestore.getInstance()
+        MobileAds.initialize(requireContext()) {}
+
+        firestore.collection("Ads").document("csDmJ4z3Focf5GmiDjWX").addSnapshotListener { value, error ->
+            // Handle the event here
+            if (error != null) {
+                Toast.makeText(requireContext(), error.toString(), Toast.LENGTH_SHORT).show()
+            } else {
+                val data: AdsModel? = value?.toObject(AdsModel::class.java)
+                Log.e("sam", "${data?.adsStatus}")
+                if (data != null) {
+                    if (data.adsStatus) {
+                        val adView = requireView().findViewById<AdView>(R.id.adView)
+                        val adRequest = AdRequest.Builder().build()
+                        adView.loadAd(adRequest)
+                    }
+                }
+            }
+        }
 
 
         //get all notes

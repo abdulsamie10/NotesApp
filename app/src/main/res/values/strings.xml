@@ -1,9 +1,10 @@
 <resources>
-    <string name="app_name">FirstNotesApplication</string>
+    <string name="app_name">My Notes</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="todo">TODO</string>
     <string name="title">Title…</string>
     <string name="subtitle">Subtitle…</string>
     <string name="notes">Notes…</string>
+    <string name="app_open_ad_unit_id">ca-app-pub-1234567890123456/1234567890</string>
 </resources>
