@@ -61,26 +61,27 @@ class HomeFragment : Fragment() {
             }
         }
 
-
         //get all notes
-        noteViewModel.getNotes().observe(viewLifecycleOwner, { notesList ->
-            binding.rcvAllNotes.layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
+        noteViewModel.getNotes().observe(viewLifecycleOwner) { notesList ->
+            binding.rcvAllNotes.layoutManager =
+                StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
             oldMyNotes = notesList as ArrayList<Notes>
             adapter = NotesAdapter(requireContext(), notesList)
             binding.rcvAllNotes.adapter = adapter
-            })
+        }
 
         //filter high notes
         binding.filterHigh.setOnClickListener{
             binding.filterHigh.setBackgroundResource(R.drawable.btn_filter_clicked)
             binding.filterMedium.setBackgroundResource(R.drawable.btn_filter_shape)
             binding.filterLow.setBackgroundResource(R.drawable.btn_filter_shape)
-            noteViewModel.getHighNotes().observe(viewLifecycleOwner, { notesList ->
-                binding.rcvAllNotes.layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
+            noteViewModel.getHighNotes().observe(viewLifecycleOwner) { notesList ->
+                binding.rcvAllNotes.layoutManager =
+                    StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
                 oldMyNotes = notesList as ArrayList<Notes>
                 adapter = NotesAdapter(requireContext(), notesList)
                 binding.rcvAllNotes.adapter = adapter
-            })
+            }
         }
 
         //filter medium notes
@@ -88,12 +89,13 @@ class HomeFragment : Fragment() {
             binding.filterHigh.setBackgroundResource(R.drawable.btn_filter_shape)
             binding.filterMedium.setBackgroundResource(R.drawable.btn_filter_clicked)
             binding.filterLow.setBackgroundResource(R.drawable.btn_filter_shape)
-            noteViewModel.getMediumNotes().observe(viewLifecycleOwner, { notesList ->
-                binding.rcvAllNotes.layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
+            noteViewModel.getMediumNotes().observe(viewLifecycleOwner) { notesList ->
+                binding.rcvAllNotes.layoutManager =
+                    StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
                 oldMyNotes = notesList as ArrayList<Notes>
                 adapter = NotesAdapter(requireContext(), notesList)
                 binding.rcvAllNotes.adapter = adapter
-            })
+            }
         }
 
         //filter low notes
@@ -101,12 +103,13 @@ class HomeFragment : Fragment() {
             binding.filterHigh.setBackgroundResource(R.drawable.btn_filter_shape)
             binding.filterMedium.setBackgroundResource(R.drawable.btn_filter_shape)
             binding.filterLow.setBackgroundResource(R.drawable.btn_filter_clicked)
-            noteViewModel.getLowNotes().observe(viewLifecycleOwner, { notesList ->
-                binding.rcvAllNotes.layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
+            noteViewModel.getLowNotes().observe(viewLifecycleOwner) { notesList ->
+                binding.rcvAllNotes.layoutManager =
+                    StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
                 oldMyNotes = notesList as ArrayList<Notes>
                 adapter = NotesAdapter(requireContext(), notesList)
                 binding.rcvAllNotes.adapter = adapter
-            })
+            }
         }
 
         //filter all notes
@@ -114,16 +117,16 @@ class HomeFragment : Fragment() {
             binding.filterHigh.setBackgroundResource(R.drawable.btn_filter_shape)
             binding.filterMedium.setBackgroundResource(R.drawable.btn_filter_shape)
             binding.filterLow.setBackgroundResource(R.drawable.btn_filter_shape)
-            noteViewModel.getNotes().observe(viewLifecycleOwner, { notesList ->
-                binding.rcvAllNotes.layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
+            noteViewModel.getNotes().observe(viewLifecycleOwner) { notesList ->
+                binding.rcvAllNotes.layoutManager =
+                    StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
                 oldMyNotes = notesList as ArrayList<Notes>
                 adapter = NotesAdapter(requireContext(), notesList)
                 binding.rcvAllNotes.adapter = adapter
-            })
+            }
         }
 
         binding.btnAddNotes.setOnClickListener{
-
             Navigation.findNavController(it).navigate(R.id.action_homeFragment_to_createNoteFragment)
         }
 
@@ -132,7 +135,6 @@ class HomeFragment : Fragment() {
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         inflater.inflate(R.menu.search_menu,menu)
-
         val item = menu.findItem(R.id.menu_search)
         val searchView = item.actionView as SearchView
         searchView.queryHint = "Enter text here..."
@@ -146,12 +148,10 @@ class HomeFragment : Fragment() {
                 return true
             }
         })
-
         super.onCreateOptionsMenu(menu, inflater)
     }
     private fun NotesFiltering(p0: String?) {
         val newFilteredArrayList = arrayListOf<Notes>()
-
         for(i in oldMyNotes){
             var title = i.title
             title = title.toLowerCase()

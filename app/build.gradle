@@ -12,11 +12,11 @@ apply plugin: "androidx.navigation.safeargs.kotlin"
 
 android {
     namespace 'com.example.firstnotesapplication'
-    compileSdk 34
+    compileSdk 33
     defaultConfig {
         applicationId "com.example.firstnotesapplication"
         minSdk 21
-        targetSdk 34
+        targetSdk 33
         versionCode 1
         versionName "1.0"
 
@@ -45,41 +45,41 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'com.google.android.material:material:1.9.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
-    implementation 'androidx.core:core-ktx:+'
-    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0'
-    implementation 'org.jetbrains.kotlin:kotlin-stdlib:1.0.0'
-    implementation 'com.google.firebase:firebase-analytics-ktx:21.2.0'
-    implementation 'com.google.firebase:firebase-crashlytics-ktx:18.3.2'
-    implementation 'com.google.android.gms:play-services-ads:21.3.0'
+    implementation 'androidx.multidex:multidex:2.0.1'
+    implementation 'androidx.core:core-ktx:1.10.1'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1'
+    implementation 'org.jetbrains.kotlin:kotlin-stdlib:1.9.0'
+    implementation 'com.google.firebase:firebase-analytics-ktx:21.3.0'
+    implementation 'com.google.firebase:firebase-crashlytics-ktx:18.3.7'
+    implementation 'com.google.android.gms:play-services-ads:22.2.0'
     implementation 'com.google.firebase:firebase-firestore-ktx:24.6.1'
+    implementation 'androidx.core:core-ktx:1.10.1'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1'
+    implementation 'androidx.lifecycle:lifecycle-process:2.6.1'
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
-
-
     //Navigation Components
     implementation 'androidx.navigation:navigation-fragment-ktx:2.6.0'
     implementation 'androidx.navigation:navigation-ui-ktx:2.6.0'
-
     //Room Database
     implementation "androidx.room:room-runtime:2.5.2"
     kapt "androidx.room:room-compiler:2.5.2"
     implementation "androidx.room:room-ktx:2.5.2"
     androidTestImplementation "androidx.room:room-testing:2.5.2"
-
-
     // Lifecycle components
     implementation "androidx.lifecycle:lifecycle-extensions:2.2.0"
     implementation "androidx.lifecycle:lifecycle-common-java8:2.6.1"
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1"
     implementation 'androidx.activity:activity-ktx:1.7.2'
-
     // Kotlin components
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.8.22"
-
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.9.0"
     //coroutines
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4'
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4'
+    def lifecycle_version = "2.3.1"
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_version"
+    annotationProcessor "androidx.lifecycle:lifecycle-compiler:$lifecycle_version"
 
-
+    implementation 'com.intuit.sdp:sdp-android:1.1.0'
 }

@@ -9,7 +9,6 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import com.example.firstnotesapplication.R
 
 class MainActivity : AppCompatActivity() {
-
     lateinit var navController: NavController
     lateinit var toolbar: Toolbar
 
@@ -27,5 +26,4 @@ class MainActivity : AppCompatActivity() {
     override fun onSupportNavigateUp(): Boolean {
         return navController.navigateUp() || super.onSupportNavigateUp()
     }
-
 }

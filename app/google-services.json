@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "480054045949",
+    "project_id": "admob-ads-kotlin-d955b",
+    "storage_bucket": "admob-ads-kotlin-d955b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:480054045949:android:9bb4eaa8c87bba46d4e294",
+        "android_client_info": {
+          "package_name": "com.example.firstnotesapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "480054045949-n753s558pbc02293fut9ieq2p3g8c3jo.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.firstnotesapplication",
+            "certificate_hash": "4a1a8e38bd2053e8ae072082406f723fc5efe230"
+          }
+        },
+        {
+          "client_id": "480054045949-1kcfhkl481jv35uk3l6k7rv3komj9k4b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCx_GDqLl5BU7m6UCKhM1gpr8Y_EFdCs3A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "480054045949-1kcfhkl481jv35uk3l6k7rv3komj9k4b.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

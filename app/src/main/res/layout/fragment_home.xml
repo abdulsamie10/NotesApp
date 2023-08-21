@@ -12,72 +12,75 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <LinearLayout
-            android:id="@+id/linearlayout1"
+        <HorizontalScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:gravity="center_vertical"
-            android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
-            <ImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_margin="5dp"
-                android:id="@+id/allNotes"
-                android:src="@drawable/filter" />
-
-            <TextView
-                android:id="@+id/filter_high"
+            <LinearLayout
+                android:id="@+id/linearlayout1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
-                android:background="@drawable/btn_filter_shape"
-                android:fontFamily="@font/regular"
-                android:paddingStart="32dp"
-                android:paddingTop="8dp"
-                android:paddingEnd="32dp"
-                android:paddingBottom="8dp"
-                android:text="High"
-                android:textColor="@color/red_color"
-                android:textSize="15sp" />
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/filter_medium"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:background="@drawable/btn_filter_shape"
-                android:fontFamily="@font/regular"
-                android:paddingStart="32dp"
-                android:paddingTop="8dp"
-                android:paddingEnd="32dp"
-                android:paddingBottom="8dp"
-                android:text="Medium"
-                android:textColor="@color/yellow_color"
-                android:textSize="15sp" />
+                <ImageView
+                    android:id="@+id/allNotes"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_margin="5dp"
+                    android:src="@drawable/filter" />
 
+                <TextView
+                    android:id="@+id/filter_high"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:background="@drawable/btn_filter_shape"
+                    android:fontFamily="@font/regular"
+                    android:paddingStart="32dp"
+                    android:paddingTop="8dp"
+                    android:paddingEnd="32dp"
+                    android:paddingBottom="8dp"
+                    android:text="High"
+                    android:textColor="@color/red_color"
+                    android:textSize="15sp" />
 
-            <TextView
-                android:id="@+id/filter_low"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:background="@drawable/btn_filter_shape"
-                android:fontFamily="@font/regular"
-                android:paddingStart="32dp"
-                android:paddingTop="8dp"
-                android:paddingEnd="32dp"
-                android:paddingBottom="8dp"
-                android:text="Low"
-                android:textColor="@color/green_color"
-                android:textSize="15sp" />
+                <TextView
+                    android:id="@+id/filter_medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:background="@drawable/btn_filter_shape"
+                    android:fontFamily="@font/regular"
+                    android:paddingStart="32dp"
+                    android:paddingTop="8dp"
+                    android:paddingEnd="32dp"
+                    android:paddingBottom="8dp"
+                    android:text="Medium"
+                    android:textColor="@color/yellow_color"
+                    android:textSize="15sp" />
 
+                <TextView
+                    android:id="@+id/filter_low"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:background="@drawable/btn_filter_shape"
+                    android:fontFamily="@font/regular"
+                    android:paddingStart="32dp"
+                    android:paddingTop="8dp"
+                    android:paddingEnd="32dp"
+                    android:paddingBottom="8dp"
+                    android:text="Low"
+                    android:textColor="@color/green_color"
+                    android:textSize="15sp" />
 
-        </LinearLayout>
+            </LinearLayout>
+        </HorizontalScrollView>
 
 
         <androidx.recyclerview.widget.RecyclerView
